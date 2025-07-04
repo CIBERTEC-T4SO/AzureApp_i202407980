@@ -36,6 +36,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: build
+    
       
     steps:
       - name: Download artifact from build job
@@ -50,4 +51,4 @@ jobs:
           app-name: 'i202407970web'
           slot-name: 'Production'
           package: '*.jar'
-          publish-profile: ${{ secrets.__publishingprofilesecretname__ }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_DD2D857ECBC84326A7275AE33439E06D }}
